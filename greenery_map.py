@@ -12,7 +12,9 @@ dist = 1000  # Distance in meters from the point
 north, south, east, west = ox.utils_geo.bbox_from_point(point, dist=dist)
 
 # Get green spaces, parks, water bodies, and building footprints
-nature_tags = {'natural': ['water', 'wood', 'tree', 'scrub', 'wetland', 'grassland', 'fell']}
+nature_tags = {'leisure': ['park', 'garden'],
+               'landuse': ['forest', 'meadow', 'park', 'grass', 'scrub', 'wetland', 'recreation_ground', 'forest'], 
+               'natural': ['water', 'wood', 'tree', 'scrub', 'wetland', 'grassland', 'fell']}
 buildings_gdf = ox.geometries.geometries_from_bbox(north, south, east, west, tags={'building': True})
 nature_gdf = ox.geometries.geometries_from_bbox(north, south, east, west, tags=nature_tags)
 
