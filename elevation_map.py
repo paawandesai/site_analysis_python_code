@@ -18,7 +18,7 @@ north, south, east, west = ox.utils_geo.bbox_from_point(point, dist=dist)
 G = ox.graph_from_bbox(north, south, east, west, network_type='all')
 
 # Add elevation data to nodes using Google Maps Elevation API
-G = ox.elevation.add_node_elevations_google(G, api_key='AIzaSyAStyQvkqqCHiYoaasYJ101qV1ZfgpKofM')
+G = ox.elevation.add_node_elevations_google(G, api_key='YOUR_API_KEY')
 
 # Get the elevation values from the graph nodes
 elevation_values = [data['elevation'] for node, data in G.nodes(data=True)]
@@ -66,6 +66,3 @@ cbar.set_label('Elevation (m)')
 
 # Show the map
 plt.show()
-
-
-#G = ox.elevation.add_node_elevations(G, api_key='AIzaSyAStyQvkqqCHiYoaasYJ101qV1ZfgpKofM')
